@@ -16,6 +16,7 @@ import { Notification } from './views/Notification';
 import { Settings } from './views/Settings';
 import { Error } from './views/404';
 import { Welcome } from './views/Welcome';
+import ProtectedRoute from './config/ProtectedRoute';
 
 function App() 
 {
@@ -32,25 +33,25 @@ function App()
 
         <Route path="/nouveau-compte" element={ <Signup /> }> </Route>
 
-        <Route path="/panel" element={ <Panel /> }> </Route>
+        <Route path="/panel" element={ <ProtectedRoute> <Panel /> </ProtectedRoute> }> </Route>
 
-        <Route path="/chatbot" element={ <ChatBot /> }> </Route>
+        <Route path="/chatbot" element={ <ProtectedRoute> <ChatBot /> </ProtectedRoute> }> </Route>
 
-        <Route path="/services" element={ <Service /> }> </Route>
+        <Route path="/services" element={ <ProtectedRoute> <Service /> </ProtectedRoute> }> </Route>
 
-        <Route path="/profile" element={ <Profil /> }> </Route>
+        <Route path="/profile" element={ <ProtectedRoute> <Profil /> </ProtectedRoute> }> </Route>
 
-        <Route path="/panel/:pid" element={ <Dashboard /> }> </Route>
+        <Route path="/panel/:pid" element={ <ProtectedRoute> <Dashboard /> </ProtectedRoute> }> </Route>
 
-        <Route path="/panel/:pid/calendrier" element={ <Calendar /> }> </Route>
+        <Route path="/panel/:pid/calendrier" element={ <ProtectedRoute> <Calendar /> </ProtectedRoute> }> </Route>
 
-        <Route path="/panel/:pid/itk" element={ <Itk /> }> </Route>
+        <Route path="/panel/:pid/itk" element={ <ProtectedRoute> <Itk /> </ProtectedRoute> }> </Route>
 
-        <Route path="/panel/:pid/reseau" element={ <Network /> }> </Route>
+        <Route path="/panel/:pid/reseau" element={ <ProtectedRoute> <Network /> </ProtectedRoute> }> </Route>
 
-        <Route path="/panel/:pid/notification" element={ <Notification /> }> </Route>
+        <Route path="/panel/:pid/notification" element={ <ProtectedRoute> <Notification /> </ProtectedRoute> }> </Route>
 
-        <Route path="/panel/:pid/parametre" element={ <Settings /> }> </Route>
+        <Route path="/panel/:pid/parametre" element={ <ProtectedRoute> <Settings /> </ProtectedRoute> }> </Route>
     
         <Route path="*" element={ <Error />  } ></Route>
 

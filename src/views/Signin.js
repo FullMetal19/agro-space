@@ -25,12 +25,15 @@ export function Signin()
             const credential = await getUserById( res.user.uid )
             sessionStorage.setItem("uid", res.user.uid );
 
+            const user = res.user;
+            const idToken = await user.getIdToken();
+
             sessionStorage.setItem("fname", credential.fname );
             sessionStorage.setItem("lname", credential.lname );
             sessionStorage.setItem("phone", credential.phone );
             sessionStorage.setItem("sex", credential.sex );
             sessionStorage.setItem("email", credential.email );
-            sessionStorage.setItem("token", res.user.accessToken );
+            sessionStorage.setItem("token", idToken );
 
             navigate('/panel')
         } catch (error) {

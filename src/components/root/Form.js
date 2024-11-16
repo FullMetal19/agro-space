@@ -4,6 +4,7 @@ import { addDeviceToSpeculation, addDeviceToRealtimeDB } from "../../config/Devi
 import { db } from "../../config/DBconfig";
 import { doc, getDoc} from 'firebase/firestore';
 import axios from 'axios';
+import { addITK } from "../../config/ITKModal";
 
 export function SpecyForm({ pid })
 {
@@ -15,31 +16,16 @@ export function SpecyForm({ pid })
 
 const generateCalendar = (startAt, duration, water) => {
 
-    let [year, month, day] = startAt.split("-").map(Number); // Convert to numbers
-    const arr1 = [1, 3, 5, 7, 8, 10, 12];
-    let threshold = 30;
+    const start = new Date(startAt);
     let calendarObj = {};
     let calendarEndAt = 0; // New object to store generated dates
+    let dateKey = 0
 
     for (let i = 0; i < duration; i++) {
-        if (month > 12) { 
-            year += 1;
-            month = 1;
-            day = 1;
-        } else if (arr1.includes(month)) {
-            threshold = 31;
-        } else if (month === 2) {
-            threshold = 28;
-        } else {
-            threshold = 30;
-        }
-        if (day < threshold) {
-            day += 1;
-        } else {
-            day = 1;
-            month += 1;
-        }
-        let dateKey = `${day}-${month}-${year}`;
+
+        let newDate = new Date(start);
+        newDate.setDate(start.getDate() + i);
+        dateKey = newDate.toISOString().split('T')[0]
         let content = {
             morning: {
                 water: water,
@@ -56,7 +42,8 @@ const generateCalendar = (startAt, duration, water) => {
         };  
         calendarObj[dateKey] = content;
         calendarEndAt = dateKey
-    }
+      }
+
     return [ calendarEndAt, calendarObj ]
 };
 
@@ -69,7 +56,7 @@ const generateCalendar = (startAt, duration, water) => {
     
     const handleForm = async ( event ) => {
         event.preventDefault();
-        const docRef = doc(db, "projects", pid); // Replace "yourCollectionName" with your actual collection name
+        const docRef = doc(db, "projects", pid); 
         const docSnap = await getDoc(docRef);
     
         // if (docSnap.exists()) {
@@ -99,11 +86,17 @@ const generateCalendar = (startAt, duration, water) => {
         const startAt =  inputs.startAt
         const duration =  40 // days  apiData.ndays
 
+        const desc = "survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau."
+        const fertilizer = "survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau."
+        const phyto = " survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau."
+
         const [ endAt, calendar ] = generateCalendar ( startAt, duration, water)
-        // console.log( inputs )
+        // console.log( endAt  )
+        // console.log( calendar  )
         try {
             const sid = await addSpeculation ( pid, inputs, duration, endAt )
             await addToCalendars(sid, inputs.sname, inputs.startAt , duration, endAt, calendar) 
+            await addITK(sid, inputs.sname, desc, fertilizer, phyto)
             setResponse(1)
         } catch (error) {
             setResponse(0)

@@ -7,7 +7,7 @@ import { useParams } from "react-router";
 import { Devices, ModificationForm, ProjectForm } from "../components/Dashboard/Forms";
 import { delProject } from "../config/ProjectModal";
 import { useNavigate } from 'react-router-dom';
-import { getSpeculations } from "../config/SpeculationModal";
+import { delSpeculation, getSpeculations } from "../config/SpeculationModal";
 
 
 export function Settings()
@@ -21,6 +21,8 @@ export function Settings()
         delProject(pid)
         navigate('/panel')
     }
+
+    const removeSpeculation = ( sid )=>{ delSpeculation( sid ) }
 
     {/* ********************************************************************************************* */}  
 
@@ -53,8 +55,7 @@ export function Settings()
         const res = await getSpeculations({ pid })
         setData( res )
     } 
-    useEffect( ()=>{ getData()  }, [] );
-
+    useEffect( ()=>{ getData()  }, [data] );
 
 
     return (
@@ -112,13 +113,13 @@ export function Settings()
                                     <button className={!buttonState[key] ? "btn btn-sm btn-fifth" : "btn btn-sm btn-basic"} onClick={() => handleButtonClick(key, false)} > culture </button>  
                                 </div>
                             </div>
-                            <div className="px-4">  { buttonState[key] ? ( <Devices devices={ item.device } sid={item.sid} /> ) : ( <ModificationForm soiltype={ item.soiltype } flowrate={ item.flow } /> )  }  </div>
+                            <div className="px-4">  { buttonState[key] ? ( <Devices devices={ item.device } sid={item.sid} /> ) : ( <ModificationForm soiltype={ item.soiltype } flowrate={ item.flow } sid={item.sid} /> )  }  </div>
                             <div className="d-flex align-items-center justify-content-between border-top py-2 px-3"> 
                                 <div className="d-flex align-items-center gap-2"> 
                                     <input type="checkbox"  className="form-check-input color-fifth"  id={`checker-${key}`}   onChange={() => handleCheckboxChange(key)} />
                                     <label className="color-gray fs-s text-start " htmlFor={`checker-${key}`} > Activer le bouton de suppression </label>
                                 </div>
-                                <button disabled={!checkState[key]} className="btn btn-sm btn-fifth"> supp </button>  
+                                <button disabled={!checkState[key]} className="btn btn-sm btn-fifth" onClick={ ()=>{ removeSpeculation( item.sid )} } > supp </button>  
                             </div>
                         </div>
                     </div>

@@ -27,9 +27,9 @@ const nodes = [
 
   { id: '1', type: 'default', position: { x: 300, y: 50 }, data: { label: 'Project' } },
 
-  { id: '2', type: 'default', position: { x: 100, y: 200 }, data: { label: 'Tomate' } },
-  { id: '3', type: 'default', position: { x: 300, y: 200 }, data: { label: 'Arachide' } },
-  { id: '4', type: 'default', position: { x: 500, y: 200 }, data: { label: 'Oignon' } },
+  { id: '2', type: 'default', position: { x: 100, y: 200 }, data: { label: 'culture-1' } },
+  { id: '3', type: 'default', position: { x: 300, y: 200 }, data: { label: 'culture-2' } },
+  { id: '4', type: 'default', position: { x: 500, y: 200 }, data: { label: 'culture-3g' } },
 
   { id: '5', type: 'default', position: { x: 100, y: 350 }, data: { label: 'ID-appareil' } },
   { id: '6', type: 'default', position: { x: 300, y: 350 }, data: { label: 'ID-appareil' } },

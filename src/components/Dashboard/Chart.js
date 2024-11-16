@@ -72,7 +72,7 @@ export function BarsChart({ data })
                         <Tooltip />
                         <Legend />
                         <CartesianGrid strokeDasharray="3 3" />
-                        <Bar dataKey="jours_passés" stackId="a" fill="#c4855e" />
+                        <Bar dataKey="jours_passés" stackId="a" fill="#0f9015" />
                         <Bar dataKey="jours_restant" stackId="a" fill="#A9A9A9" />
                     </BarChart>
                 </ResponsiveContainer>

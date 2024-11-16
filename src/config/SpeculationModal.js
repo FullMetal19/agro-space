@@ -72,6 +72,27 @@ export const getSpeculationById = async ( sid ) => {
 };
 
 
+export const UpdateSpeculation = async ( sid , data )=> {
+
+  try {  
+    const speculationRef = doc(db, "speculations", sid);
+    var date = new Date();
+    var time = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}` 
+  
+    await updateDoc(speculationRef, {
+      flow : data.flow,
+      soiltype : data.soiltype,
+      modifiedAt : time,
+    });
+    return true
+
+  } catch (error) {  return false  }
+}
+
+
+export const delSpeculation = async ( sid )=>{
+  await deleteDoc(doc(db, "speculations", sid));
+}
 
   // ************************************  * REALTIME DATABESE CODE  *  *******************************************
 
