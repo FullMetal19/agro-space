@@ -14,9 +14,9 @@ import { ref, get, child } from 'firebase/database';
 export function Dashboard ()
 {
     const [specs , setSpecs] = useState([]);
-    const [nbspecs , setNbspecs] = useState();
-    const [nbdevice , setNbdevice] = useState();
-    const [nbofdeviceinActiviy , setNbofdeviceinActiviy] = useState();
+    const [nbspecs , setNbspecs] = useState(0);
+    const [nbdevice , setNbdevice] = useState(0);
+    const [nbofdeviceinActiviy , setNbofdeviceinActiviy] = useState(0);
     const { pid } = useParams()
 
     const findSpecs = async () => {      

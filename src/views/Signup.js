@@ -89,12 +89,12 @@ export function Signup(){
                                         {/* ************************************************************************ */}
                                         <div className="col-lg-6 mb-3 form-outline  d-flex flex-column"> 
                                             <span className="fs-xs color-gray text-start mb-1 border-left px-2" > Numéro de téléphone <span className='color-fifth' > * </span> </span>
-                                            <input type="text" name="phone" className="form-control" placeholder="770000000" onChange={ handleInputs } />
+                                            <input type="text" name="phone" className="form-control" placeholder="770000000" onChange={ handleInputs } required />
                                         </div>
                                         {/* ************************************************************************ */}
                                         <div className="col-lg-6 mb-3 form-outline  d-flex flex-column"> 
-                                            <span className="fs-xs color-gray text-start mb-1 border-left px-2" > Email  <span className='color-fifth' >( c'est optionel) </span> </span>
-                                            <input type="email" name="email" className="form-control" placeholder="email" onChange={ handleInputs } />
+                                            <span className="fs-xs color-gray text-start mb-1 border-left px-2" > Email </span>
+                                            <input type="email" name="email" className="form-control" placeholder="email" onChange={ handleInputs } required />
                                         </div>
                                         {/* ************************************************************************ */}
                                         <div className="col-lg-6 mb-3 form-outline  d-flex flex-column"> 

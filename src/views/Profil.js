@@ -27,8 +27,8 @@ export function Profil()
             <div className="container-fluid bg-gradients py-5" >
                 <div className="row d-flex justify-content-center" >
                     <div className="col-md-8 col-lg-6" data-aos="fade-up"> 
-                        <div className="d-flex flex-column align-items-center border w-100 p-3"> <span className="ms-2 text-center color-white mb-3 px-4 h6"> Use the online image color picker above to select a color and get the HTML Color Code of this pixel. Also you get the HEX color code value, RGB value and HSV value you get the HEX color code value, RGB value you get the HEX color code value, RGB value </span> </div>
-                        <div className="mt-4 d-flex justify-content-center"> <a className="btn btn-basic rounded-2 py-3 px-5 shadow" href="/"> Apropos de Xelkoom-AI </a> </div>
+                        <div className="d-flex flex-column align-items-center border w-100 p-3"> <span className="ms-2 text-center color-white mb-3 px-4 h6"> Agro-space génère des informations personnalisées relative à l'itinéraire technique et au calendrier d'arrosage qui sera exécuté par le dispostif que nous avons conçu pour communiqué avec le sytème et assuré l'automatisation. Ce système a été dévelopé par le startup Xelkoom-AI dans l'espoir de booster ce secteur et fiabilisé les données qui en ressortent  </span> </div>
+                        {/* <div className="mt-4 d-flex justify-content-center"> <a className="btn btn-basic rounded-2 py-3 px-5 shadow" href="/"> Apropos de Xelkoom-AI </a> </div> */}
                     </div>
                 </div>
             </div>

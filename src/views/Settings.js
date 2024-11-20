@@ -109,7 +109,7 @@ export function Settings()
                             <div className="d-flex border-bottom p-2"> <span className="color-fifth fs bold ps-3"> { item.sname } </span>  </div>
                             <div className="d-flex border-bottom mb-2 py-2 px-4"> 
                                 <div className="d-flex gap-2"> 
-                                    <button className={buttonState[key] ? "btn btn-sm btn-fifth" : "btn btn-sm btn-basic"} onClick={() => handleButtonClick(key, true)} > appareils  </button>
+                                    <button disabled className={buttonState[key] ? "btn btn-sm btn-fifth" : "btn btn-sm btn-basic"} onClick={() => handleButtonClick(key, true)} > appareils  </button>
                                     <button className={!buttonState[key] ? "btn btn-sm btn-fifth" : "btn btn-sm btn-basic"} onClick={() => handleButtonClick(key, false)} > culture </button>  
                                 </div>
                             </div>

@@ -218,12 +218,21 @@ export function ProjectForm({ pid })
                             <div className="col-lg-6 mb-3 form-outline d-flex flex-column"> 
                                 <span className="fs-xs color-gray text-start mb-1 border-left px-2" > La région où l'exploitattion se trouve <span className='color-fifth' > * </span> </span>
                                 <select class="form-select" name='region' value={ inputs.region } aria-label="Default select example" onChange={ handleInputs } >
-                                    <option value="masculin" > Thies </option>
-                                    <option value="feminin" > Saint Louis </option>
-                                    <option value="feminin" > Fatick </option>
-                                    <option value="feminin" > Kaolack </option>
-                                    <option value="feminin" > Kaffrine </option>
-                                    <option value="feminin" > Louga </option>
+                                <option value="" > selectionner une région </option>
+                                    <option value="Thies" > Thies </option>
+                                    <option value="Saint Louis" > Saint Louis </option>
+                                    <option value="Fatick" > Fatick </option>
+                                    <option value="Kaolack" > Kaolack </option>
+                                    <option value="Kaffrine" > Kaffrine </option>
+                                    <option value="Louga" > Louga </option>
+                                    <option value="Diourbel" > Diourbel </option>
+                                    <option value="Matam" > Matam </option>
+                                    <option value="Tambacounda" > Tambacounda </option>
+                                    <option value="Ziguinchor" > Ziguinchor </option>
+                                    <option value="Sedhiou" > Sedhiou </option>
+                                    <option value="Kédougou" > Kédougou </option>
+                                    <option value="Kolda" > Kolda </option>
+                                    <option value="Dakar" > Dakar </option>
                                 </select>
                             </div>
                             {/* ************************************************************************ */}

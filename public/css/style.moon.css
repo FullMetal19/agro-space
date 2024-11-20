@@ -152,13 +152,13 @@
     width: 100% !important;
     height: 85vh !important;
     margin: 0 !important;
-    background-image: url('../img/bg-img17.jpg') !important;
+    background-image: url('../img/DALL.png') !important;
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
 }
 .slide-fixed{
-    background-image: url('/img/bg-img.jpg') !important;
+    background-image: url('/img/BALL.jpg') !important;
     background-attachment: fixed !important;
 }
  .bg-img{

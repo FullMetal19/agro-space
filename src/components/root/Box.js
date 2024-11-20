@@ -18,7 +18,7 @@ export function Card({ img, title, text })
 {
     return(
 
-        <div className="d-flex flex-column justify-content-center align-items-center border w-100"> 
+        <div className="d-flex flex-column justify-content-center align-items-center border w-100 py-2"> 
             <img src={ img } alt="Logo" className="d-inline-block align-text-top img-fluid" />
             <span className="h5 color-darks"> { title } </span>
             <span className="text-center color-darks color-second mb-4 p-3"> { text } </span>

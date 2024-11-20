@@ -38,27 +38,27 @@ export function Home()
                         </div>
                     </div>
                     <div className="col-lg-5 "> 
-                        <span className="text-hover"> Download the app the online image color picker the online image color picker the online image color picker </span>
+                        <span className="text-hover"> Télécharger la version mobile de l'application :vous avez à disposition la version android et ios. </span>
                     </div>
                 </div>
             </div>   
 
             {/* **************************************************************************************************************** */}   
             <div className="container-fluid bg-second p-4 border-top"  data-aos="fade-up" >
-                <LottieContainer lottieAnim={ agriAnimation } title={'Use the online image'} text={' Use the online image color picker above to select a color and get the HTML Color Code of this pixel. Also you get the HEX color code value, RGB value and HSV value'} />
+                <LottieContainer lottieAnim={ agriAnimation } title={"Systeme générative de calendrier cultural et d'automatisation"} text={"Plus besoin d'avoir une connaissance approfondi dans le domaine agricole pour lancer son propre business dans l'agriculture."} />
             </div> 
 
             {/* **************************************************************************************************************** */}   
             <div className="container-fluid bg-darks py-5 px-4 border"> 
               <div className="container"> 
                 <div className="row my-5"> 
-                    <div className="col-md-12 d-flex justify-content-center mb-5"> <span className="h1 color-second text-center"> Use the online image </span> </div>
+                    <div className="col-md-12 d-flex justify-content-center mb-5"> <span className="h1 color-second text-center"> Pourquoi choisir notre systeme </span> </div>
                     <div className="col-md-12"> 
                         <div className="row">
-                            <div className="col-md-6 col-lg-3 d-flex justify-content-center" data-aos="fade-up">  <Box title={'Use the online image'}/>  </div>
-                            <div className="col-md-6 col-lg-3 d-flex justify-content-center" data-aos="fade-up">  <Box title={'Use the online image'}/>  </div>
-                            <div className="col-md-6 col-lg-3 d-flex justify-content-center" data-aos="fade-up">  <Box title={'Use the online image'}/>  </div>
-                            <div className="col-md-6 col-lg-3 d-flex justify-content-center" data-aos="fade-up">  <Box title={'Use the online image'}/>  </div>
+                            <div className="col-md-6 col-lg-3 d-flex justify-content-center" data-aos="fade-up">  <Box title={'Fiable'}/>  </div>
+                            <div className="col-md-6 col-lg-3 d-flex justify-content-center" data-aos="fade-up">  <Box title={'Générative'}/>  </div>
+                            <div className="col-md-6 col-lg-3 d-flex justify-content-center" data-aos="fade-up">  <Box title={'Multiplateforme'}/>  </div>
+                            <div className="col-md-6 col-lg-3 d-flex justify-content-center" data-aos="fade-up">  <Box title={'Facile d\'utilisation'}/>  </div>
                         </div>
                     </div>
                 </div>
@@ -69,12 +69,12 @@ export function Home()
             <div className="container-fluid bg-second py-5 px-4 border-top" >
               <div className="container"> 
                 <div className="row my-5"> 
-                    <div className="col-12 d-flex justify-content-center mb-5"> <span className="h1 color-second color-basic text-center"> Use the online image </span> </div>
+                    <div className="col-12 d-flex justify-content-center mb-5"> <span className=" color-darks display-6 text-center"> Principale service </span> </div>
                     <div className="col-12"> 
                        <div className="row">
-                            <div className="col-md-4 d-flex justify-content-center mb-4" data-aos="fade-up"> <Card img={'../img/img1.jpg'} title={'Use the online image'} text={'se the online image color picker above to select a color and get the HTML Color Code of this pixel. Also you get the HEX color code value, RGB value and HSV value'} /> </div>
-                            <div className="col-md-4 d-flex justify-content-center mb-4" data-aos="fade-up"> <Card img={'../img/img2.jpg'} title={'Use the online image'} text={'se the online image color picker above to select a color and get the HTML Color Code of this pixel. Also you get the HEX color code value, RGB value and HSV value'} /> </div>
-                            <div className="col-md-4 d-flex justify-content-center mb-4" data-aos="fade-up"> <Card img={'../img/img3.png'} title={'Use the online image'} text={'se the online image color picker above to select a color and get the HTML Color Code of this pixel. Also you get the HEX color code value, RGB value and HSV value'} /> </div>
+                            <div className="col-md-4 d-flex justify-content-center mb-4" data-aos="fade-up"> <Card img={'../img/img1.png'} title={'Automatisation et IA générative'} text={"L'applification simplifie les tâches répétitives et optimise les processus. Grâce à des scénarios personnalisables et des intégrations intelligentes, cette fonctionnalité permet de déclencher des actions automatiques en fonction de conditions définies"} /> </div>
+                            <div className="col-md-4 d-flex justify-content-center mb-4" data-aos="fade-up"> <Card img={'../img/img2.png'} title={'Monitoring et gestion de controle'} text={"Grâce à des tableaux de bord interactifs et des notifications en direct, l'application fournit des indicateurs clés de performance, et des rapports détaillés pour garantir un contrôle optimal."} /> </div>
+                            <div className="col-md-4 d-flex justify-content-center mb-4" data-aos="fade-up"> <Card img={'../img/img3.png'} title={'Stockage de données'} text={"Avec la fonctionnalité de stockage, l'application offre un espace sécurisé et centralisé pour sauvegarder toutes les données importantes. Les utilisateurs peuvent accéder facilement à leurs données, ce service garantit la disponibilité, l'intégrité et la confidentialité des informations."} /> </div>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ export function Home()
 
             {/* **************************************************************************************************************** */}   
             <div className="container-fluid bg-second p-4 border-top" data-aos="fade-up">
-                <ReverseLottieContainer lottieAnim={ tech } title={'Use the online image'} text={' Use the online image color picker above to select a color and get the HTML Color Code of this pixel. Also you get the HEX color code value, RGB value and HSV value'} />
+                <ReverseLottieContainer lottieAnim={ tech } title={'Particularité du systeme'} text={"Nous vous offrons un syteme multiplateforme qui vous facilite la gestion et le controle de la chaine de production agricole. "} />
             </div> 
 
             {/* **************************************************************************************************************** */}
@@ -100,7 +100,7 @@ export function Home()
                 <div className="row d-flex justify-content-center" >
                 <div className="col-md-8 col-lg-6" data-aos="fade-up"> 
                     <div className="d-flex flex-column align-items-center border w-100 p-3"> 
-                        <span className="ms-2 text-center color-white mb-3 px-4 h6"> Use the online image color picker above to select a color and get the HTML Color Code of this pixel. Also you get the HEX color code value, RGB value and HSV value you get the HEX color code value, RGB value you get the HEX color code value, RGB value </span>                         
+                        <span className="ms-2 text-center color-white mb-3 px-4 h6"> Agro-space génère des informations personnalisées relative à l'itinéraire technique et au calendrier d'arrosage qui sera exécuté par le dispostif que nous avons conçu pour communiqué avec le sytème et assuré l'automatisation. Ce système a été dévelopé par le startup Xelkoom-AI dans l'espoir de booster ce secteur et fiabilisé les données qui en ressortent  </span>                         
                     </div>
                     <div className="mt-4 d-flex justify-content-center"> <a className="btn btn-basic rounded-2 py-3 px-5 shadow" href="/"> Apropos de Xelkoom-AI </a> </div>
                 </div>

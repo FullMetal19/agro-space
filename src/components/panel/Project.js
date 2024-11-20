@@ -42,14 +42,14 @@ export function Project()
                             <div className="col-3 col-lg-2 sml-size mb-2 d-flex justify-content-center align-items-center p-0" > <Lottie animationData={ leaf } /> </div>
                             <div className="col-9 col-lg-10 d-flex align-items-center p-0" > <span className="h4 color-fifth"> Agro-space </span> </div>
                         </div>
-                        <div className="mb-3" > <span className="color-gray"> Use the online image color picker the online image color picker the online image color picker the online image the online image color picker the online image color picker the online image color picker the online image the online image color picker the online image color picker the online image color picker the online image </span> </div>
-                        <div className="mb-2" > <span className="color-fifth bold"> By team xelkom-AI </span> </div>
+                        <div className="mb-3" > <span className="color-gray"> Avec l'automatisation, le systeme contrôle directement l’activité d’arrosage générer par notre IA générative. Elle ajuste les paramètres selon la zone le climat et la culture. </span> </div>
+                        <div className="mb-2" > <span className="color-fifth bold"> team xelkom-AI </span> </div>
                     </div>
                     {/* ********************************************************************************************* */}
                     <div className="border d-flex flex-column bg-white rounded-2 p-4 mb-4"> 
-                        <div className="mb-2" ><span className="fs bold color-gray"> Statistique </span> </div>
-                        <div className="mb-3" > <span className="color-gray"> Use the online er the online image the online image color picker the online image color picker the online image color picker the online image the online image color picker the online image color picker the online image color picker the online image </span> </div>
-                        <div className="mb-2 d-flex justify-content-end" > <span className="color-gray fs-s text-end"> By team xelkom-AI </span> </div>
+                        <div className="mb-2" ><span className="fs bold color-gray"> AgroSpace </span> </div>
+                        <div className="mb-3" > <span className="color-gray"> Le systeme intégre un modele générative enrichissant l'expérience en fournissant des recommandations basées sur des analyses approfondies des données locales et globales. </span> </div>
+                        <div className="mb-2 d-flex justify-content-end" > <span className="color-gray fs-s text-end"> team xelkom-AI </span> </div>
                     </div>
                 </div>
                
@@ -120,17 +120,17 @@ function    HelpViews()
                 {/* ********************************************************************************************* */} 
                 <div className="col-12 mb-4" > 
                     <span className="ms-2 color-fifth fs-s border-left ps-2"> Comment créer un nouveau projet </span> 
-                    <div className="d-flex rounded-2 bg-second p-3 mt-1 border" > <span className="color-gray fs-s mb-3"> Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous </span> </div>
+                    <div className="d-flex rounded-2 bg-second p-3 mt-1 border" > <span className="color-gray fs-s mb-3"> La creation de compte est tres simple vous cliquer sur le grand bouton avec un + ou bien vous cliquer sur l'onglet Configuration. Ensuite vous remplissez le formulaire de creation de projet puis vous cliquez sur le boutton enregistrer pour valider. Veillez remplir normalement ces informations car c'est cruciale pour la suite. </span> </div>
                 </div>
                 {/* ********************************************************************************************* */} 
                 <div className="col-12 mb-4" > 
                     <span className="ms-2 color-fifth fs-s border-left ps-2"> Que représente un projet </span> 
-                    <div className="d-flex rounded-2 bg-second p-3 mt-1 border" > <span className="color-gray fs-s mb-3"> Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous </span> </div>
+                    <div className="d-flex rounded-2 bg-second p-3 mt-1 border" > <span className="color-gray fs-s mb-3"> Le projet en question représente votre zone d'exploitation d'où la raison de fournir des informations juste lors de sa création. </span> </div>
                 </div>
                 {/* ********************************************************************************************* */} 
                 <div className="col-12 mb-4" > 
                     <span className="ms-2 color-fifth fs-s border-left ps-2"> quelle est la durée de validité d'un projet </span> 
-                    <div className="d-flex rounded-2 bg-second p-3 mt-1 border" > <span className="color-gray fs-s mb-3"> Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous Vous n'avez pas de projet pour l'instant. Créez en un en cliquant sur le box ci-dessous </span> </div>
+                    <div className="d-flex rounded-2 bg-second p-3 mt-1 border" > <span className="color-gray fs-s mb-3"> Le projet reste valide aussi longtemps vous le gardez. Ce qui veut dire que vous etes la seul à pouvoir mettre à votre projet en le supprimant. </span> </div>
                 </div>
             </div>
         </div>
@@ -202,12 +202,21 @@ function ConfigViews()
                             <div className="col-lg-6 mb-3 form-outline d-flex flex-column"> 
                                 <span className="fs-xs color-gray text-start mb-1 border-left px-2" > La région où l'exploitattion se trouve <span className='color-fifth' > * </span> </span>
                                 <select class="form-select" name='region' aria-label="Default select example" onChange={ handleInputs } >
-                                    <option value="masculin" > Thies </option>
-                                    <option value="feminin" > Saint Louis </option>
-                                    <option value="feminin" > Fatick </option>
-                                    <option value="feminin" > Kaolack </option>
-                                    <option value="feminin" > Kaffrine </option>
-                                    <option value="feminin" > Louga </option>
+                                    <option value="" > selectionner une région </option>
+                                    <option value="Thies" > Thies </option>
+                                    <option value="Saint Louis" > Saint Louis </option>
+                                    <option value="Fatick" > Fatick </option>
+                                    <option value="Kaolack" > Kaolack </option>
+                                    <option value="Kaffrine" > Kaffrine </option>
+                                    <option value="Louga" > Louga </option>
+                                    <option value="Diourbel" > Diourbel </option>
+                                    <option value="Matam" > Matam </option>
+                                    <option value="Tambacounda" > Tambacounda </option>
+                                    <option value="Ziguinchor" > Ziguinchor </option>
+                                    <option value="Sedhiou" > Sedhiou </option>
+                                    <option value="Kédougou" > Kédougou </option>
+                                    <option value="Kolda" > Kolda </option>
+                                    <option value="Dakar" > Dakar </option>
                                 </select>
                             </div>
                             {/* ************************************************************************ */}

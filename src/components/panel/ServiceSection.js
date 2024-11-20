@@ -37,12 +37,12 @@ export function ServiceSection()
             </div>
             {/* **************************************************************************************************************** */}   
             <div className="row py-5"> 
-                <div className="col-md-6 col-lg-4"> <ServiceItem title="This is my title" text="is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used " /> </div>
-                <div className="col-md-6 col-lg-4"> <ServiceItem title="This is my title" text="is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used " /> </div>
-                <div className="col-md-6 col-lg-4"> <ServiceItem title="This is my title" text="is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used " /> </div>
-                <div className="col-md-6 col-lg-4"> <ServiceItem title="This is my title" text="is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used " /> </div>
-                <div className="col-md-6 col-lg-4"> <ServiceItem title="This is my title" text="is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used " /> </div>
-                <div className="col-md-6 col-lg-4"> <ServiceItem title="This is my title" text="is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used " /> </div>
+                <div className="col-md-6 col-lg-4"> <ServiceItem title="IA générative" text="Un modèle génératif qui fournit des recommandations basées sur des analyses approfondies des données locales et globales. Les utilisateurs pourront interagir avec le système.  " /> </div>
+                <div className="col-md-6 col-lg-4"> <ServiceItem title="Fiabilité" text="Les algorithmes d’analyse sont basés sur des modèles d’apprentissage automatique avancés, ce qui permet de fournir des informations précises et pertinentes en temps réel." /> </div>
+                <div className="col-md-6 col-lg-4"> <ServiceItem title="Sécurité" text="Les algorithmes d’analyse sont basés sur des modèles d’apprentissage automatique avancés, ce qui permet de fournir des informations précises et pertinentes en temps réel." /> </div>
+                <div className="col-md-6 col-lg-4"> <ServiceItem title="Multiplateforme" text="Le sytème est conçue pour fonctionner de manière fluide sur différentes plateformes afin de répondre aux besoins des utilisateurs, quel que soit leur environnement technologique" /> </div>
+                <div className="col-md-6 col-lg-4"> <ServiceItem title="Automatisation" text="Elle exécute et ajuste les paramètres en fonction des conditions météorologiques et des besoins spécifiques des cultures, réduisant ainsi le gaspillage d’eau et améliorant l’efficacité." /> </div>
+                <div className="col-md-6 col-lg-4"> <ServiceItem title="Monitoring" text="La fonctionnalité de monitoring est essentielle pour fournir une visibilité complète et en temps réel des conditions agricoles, accessibles sur plusieurs plateformes." /> </div>
             </div>
 
             
@@ -81,15 +81,15 @@ function SlideContain({ img })
                         <div className="col-11 d-flex align-items-center p-0" > <span className="h4 color-fifth"> Agro-space </span> </div>
                     </div> 
                     <div className="row px-2"  >
-                        <div className="col-lg-12 mb-3 rounded-2 p-2 border" >  <span className='color-gray fs-s mb-3' > is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used is assigned a value but never used </span> </div>
+                        <div className="col-lg-12 mb-3 rounded-2 p-2 border" >  <span className='color-gray fs-s mb-3' > Le monitoring inclut un système de notification sur les activités agricoles des dispositifs déployés dans la zone d'exploitation </span> </div>
                         <div className="col-lg-12 mb-2 px-4" >
-                            <div className="rounded-2 bg-second p-2 border" > <span className="color-gray fs-s"> <span className="h6 color-fifth"> A. </span> never used is assigned a value but never used  </span> </div>
+                            <div className="rounded-2 bg-second p-2 border" > <span className="color-gray fs-s"> <span className="h6 color-fifth"> A. </span> Ces données sont affichées en temps réel :   </span> </div>
                         </div>
                         <div className="col-lg-12 mb-2 px-4" >
-                            <div className="rounded-2 bg-second p-2 border" > <span className="color-gray fs-s"> <span className="h6 color-fifth"> B. </span> never used is assigned a value but never used  </span> </div>
+                            <div className="rounded-2 bg-second p-2 border" > <span className="color-gray fs-s"> <span className="h6 color-fifth"> B. </span> sur l'application web </span> </div>
                         </div>
                         <div className="col-lg-12 mb-2 px-4" >
-                            <div className="rounded-2 bg-second p-2 border" > <span className="color-gray fs-s"> <span className="h6 color-fifth"> C. </span> never used is assigned a value but never used  </span> </div>
+                            <div className="rounded-2 bg-second p-2 border" > <span className="color-gray fs-s"> <span className="h6 color-fifth"> C. </span> sur l'application mobile  </span> </div>
                         </div>
                     </div>
                 </div>
@@ -116,26 +116,26 @@ function SlideContain2({ img })
                 <div className="row">
                     <div className="col-md-6"> 
                         <div className="border d-flex flex-column bg-second rounded-2 p-4 mb-4"> 
-                            <div className="mb-2" ><span className="fs bold color-gray"> Statistique </span> </div>
-                            <div className="" > <span className="color-gray fs-s"> Use the online er the online image the online image online er the online image the online image </span> </div>
+                            <div className="mb-2" ><span className="fs bold color-gray"> Sociale </span> </div>
+                            <div className="" > <span className="color-gray fs-s"> Un espace où les utilisateurs pourront échanger sur les bonnes pratiques et poser des questions. </span> </div>
                         </div>
                     </div>
                     <div className="col-md-6"> 
                         <div className="border d-flex flex-column bg-white rounded-2 p-4 mb-4"> 
-                            <div className="mb-2" ><span className="fs bold color-gray"> Statistique </span> </div>
-                            <div className="" > <span className="color-gray fs-s"> Use the online er the online image the online image online er the online image the online image </span> </div>
+                            <div className="mb-2" ><span className="fs bold color-gray"> Mobile </span> </div>
+                            <div className="" > <span className="color-gray fs-s"> Une conception adaptée aux écrans des smartphones pour une navigation rapide dans l'application. </span> </div>
                         </div>
                     </div>
                     <div className="col-md-6"> 
                         <div className="border d-flex flex-column bg-white rounded-2 p-4 mb-4"> 
-                            <div className="mb-2" ><span className="fs bold color-gray"> Statistique </span> </div>
-                            <div className="" > <span className="color-gray fs-s"> Use the online er the online image the online image online er the online image the online image </span> </div>
+                            <div className="mb-2" ><span className="fs bold color-gray"> Locale </span> </div>
+                            <div className="" > <span className="color-gray fs-s"> L’accent est mis sur l'adaptation locale pour répondre aux spécificités des conditions agricoles dans différentes régions. </span> </div>
                         </div>
                     </div>
                     <div className="col-md-6"> 
                         <div className="border d-flex flex-column bg-second rounded-2 p-4 mb-4"> 
-                            <div className="mb-2" ><span className="fs bold color-gray"> Statistique </span> </div>
-                            <div className="" > <span className="color-gray fs-s"> Use the online er the online image the online image online er the online image the online image </span> </div>
+                            <div className="mb-2" ><span className="fs bold color-gray"> web </span> </div>
+                            <div className="" > <span className="color-gray fs-s"> Visualisation et analyse approfondie des données collectées sur plusieurs saisons agricoles. </span> </div>
                         </div>
                     </div>
                 </div>
