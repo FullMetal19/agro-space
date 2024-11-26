@@ -14,38 +14,59 @@ export function SpecyForm({ pid })
 
 
 
-const generateCalendar = (startAt, duration, water) => {
-
+const generateCalendar = (startAt, duration, waterNeeds) => {
     const start = new Date(startAt);
     let calendarObj = {};
-    let calendarEndAt = 0; // New object to store generated dates
-    let dateKey = 0
+    let calendarEndAt = 0;
+    let dateKey = 0;
+    let phaseIndex = 0;
 
     for (let i = 0; i < duration; i++) {
-
         let newDate = new Date(start);
         newDate.setDate(start.getDate() + i);
-        dateKey = newDate.toISOString().split('T')[0]
+        dateKey = newDate.toISOString().split('T')[0];
+
+        // Vérifier si on dépasse la durée d'une phase
+        if (i >= waterNeeds[phaseIndex].duration) {
+            // Passer à la phase suivante seulement si nous ne dépassons pas les limites
+            if (phaseIndex < waterNeeds.length - 1) {
+                phaseIndex++;
+            }
+        }
+
+        // Vérifier si currentPhase est défini
+        const currentPhase = waterNeeds[phaseIndex];
+        if (!currentPhase) {
+            console.error('currentPhase est undefined ou nul à phaseIndex:', phaseIndex);
+            continue;
+        }
+
+        console.log('Phase actuelle:', currentPhase);
+
+        const dailyWaterNeed = currentPhase.water_need_perday;
+
         let content = {
             morning: {
-                water: water,
+                water: dailyWaterNeed / 2,
                 state: 0,
                 startAt: 0,
                 endAt: 0
             },
             afternoon: {
-                water: water,
+                water: dailyWaterNeed / 2,
                 state: 0,
                 startAt: 0,
                 endAt: 0
             }
-        };  
-        calendarObj[dateKey] = content;
-        calendarEndAt = dateKey
-      }
+        };
 
-    return [ calendarEndAt, calendarObj ]
+        calendarObj[dateKey] = content;
+        calendarEndAt = dateKey;
+    }
+
+    return [calendarEndAt, calendarObj];
 };
+
 
 
     const handleInputs = ( event ) => {
@@ -54,54 +75,63 @@ const generateCalendar = (startAt, duration, water) => {
         setInputs( { ...inputs, [name] : value   } ) ;
     }
     
-    const handleForm = async ( event ) => {
+
+    const handleForm = async (event) => {
         event.preventDefault();
-        const docRef = doc(db, "projects", pid); 
-        const docSnap = await getDoc(docRef);
-    
-        // if (docSnap.exists()) {
-        //     const address = docSnap.data().address
-        //     const region = docSnap.data().region
-        //
-        //   const data = {
-        //     address : address,
-        //     region : region,
-        //     area : inputs.area,
-        //     sname : inputs.sname,
-        //     soiltype : inputs.soiltype,
-        //     startAt : inputs.startAt
-        //   }
-        //   console.log(data)
-        // try {
-        //     const res = await axios.post('https://example.com/api', data);
-        //     setApiData(res.data);
-        //     } catch (error) {
-        //     console.error("Error posting data:", error); }
-        //   console.log("Document data:", docSnap.data());
-        // } else {
-        //     console.log("project not found");
-        // }
-
-        const water = 200 // litre   apiData.water
-        const startAt =  inputs.startAt
-        const duration =  40 // days  apiData.ndays
-
-        const desc = "survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau."
-        const fertilizer = "survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau."
-        const phyto = " survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau. survenue lors de l'ajout. Veillez réessayer à nouveau."
-
-        const [ endAt, calendar ] = generateCalendar ( startAt, duration, water)
-        // console.log( endAt  )
-        // console.log( calendar  )
+        
         try {
-            const sid = await addSpeculation ( pid, inputs, duration, endAt )
-            await addToCalendars(sid, inputs.sname, inputs.startAt , duration, endAt, calendar) 
-            await addITK(sid, inputs.sname, desc, fertilizer, phyto)
-            setResponse(1)
+            // Étape 1 : Récupérer les données Firebase
+            const docRef = doc(db, "projects", pid);
+            const docSnap = await getDoc(docRef);
+    
+            if (!docSnap.exists()) {
+                console.error("Projet non trouvé");
+                return;
+            }
+    
+            const projectData = docSnap.data();
+            const data = {
+                zone: projectData.region || "Dakar",
+                planting_date: inputs.startAt,
+                area: parseFloat(inputs.area),
+                crop: inputs.sname || "Oignon"
+            };
+    
+            // Étape 2 : Appeler l'API pour obtenir les détails
+            const apiUrl = `http://127.0.0.1:8001/cultures/${data.crop}/details`;
+            const res = await axios.post(apiUrl, data);
+            const apiResponse = res.data;
+            setApiData(apiResponse); // Stocker la réponse API
+            console.log(apiResponse)
+    
+            // Étape 3 : Générer le calendrier des besoins en eau
+            const waterNeeds = apiResponse.water_needs.water_needs;
+            const startAt = inputs.startAt;
+    
+            // Calcul de la durée totale (additionner la durée de chaque phase)
+            let totalDuration = 0;
+            waterNeeds.forEach(phase => {
+                totalDuration += phase.duration;
+            });
+    
+            // Générer le calendrier avec la durée totale et les besoins en eau
+            const [endAt, calendar] = generateCalendar(startAt, totalDuration, waterNeeds);
+            console.log("Calendrier généré :", calendar);
+    
+            // Étape 4 : Sauvegarder dans Firebase
+            const sid = await addSpeculation(pid, inputs, totalDuration, endAt);
+            console.log(sid)
+            await addToCalendars(sid, apiResponse.culture_name, inputs.startAt, totalDuration, endAt, calendar);
+            await addITK(sid, apiResponse.culture_name, apiResponse.description, apiResponse.fertilisation, apiResponse.phytosanitary);
+    
+            setResponse(1); // Succès
         } catch (error) {
-            setResponse(0)
+            console.error("Erreur lors du traitement :", error);
+            setResponse(0); // Échec
         }
-    }
+    };
+    
+    
 
 
     return(
