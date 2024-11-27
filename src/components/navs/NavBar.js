@@ -16,7 +16,7 @@ export function NavBarPanel()
     <nav className="navbar bg-white border">
         <div className="container-fluid px-4">
             <div className="d-flex justify-content-between align-items-center w-100" >
-                <div className="d-flex"> <span className="color-basic h2" > Agro-<span className="color-fifth">space</span> </span> </div>
+                <a href="/panel" className="d-flex link"> <span className="color-basic h2" > Agro-<span className="color-fifth">space</span> </span> </a>
                 <div> <button className="btn btn-basic fifth rounded-2" onClick={ ()=>{ decon() } } > deconnexion </button> </div>  
             </div>
         </div>
